@@ -1,0 +1,87 @@
+// -----------------------------------
+// ESTILOS COMUNES A TODAS LAS PÁGINAS
+// -----------------------------------
+html {
+    font-family: $font-family-sans-serif
+}
+
+.main{
+    padding:10px 80px;
+    margin:20px auto 80px;
+
+    @include media-breakpoint-up(xxl) {
+        padding:10px 200px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        padding:10px 20px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding:10px 40px;
+      }
+}
+
+.titulo{
+    margin-bottom:20px;
+    font-size: 10vw;
+    color: $primary;
+    text-align: center;
+}
+
+:is(h1, p, ul, h2){
+    font-family: $font-family-sans-serif;
+}
+
+blockquote{
+    font-family: $font-family-serif;
+}
+
+i{
+    font-size: 30px;
+    color: $primary;
+}
+
+i:hover{
+    opacity:0.6;
+}
+
+
+// ---------------------------
+// ESTILOS DEL HEADER Y FOOTER
+// ---------------------------
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:4px;
+    margin: 0 50px;
+    border-bottom: 1px solid $secondary;
+
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+        margin: 0 10px;
+        text-align: center;
+      }
+}
+
+.menu-footer{
+    border-top: 1px solid $secondary;
+    border-bottom: none;
+}
+
+.menu__img{
+    height:50px;
+
+    @include media-breakpoint-down(md) {
+        margin: 10px;
+      }
+}
+
+.menu__list{
+    display: flex;
+    justify-content: space-between;
+    padding:0;
+    margin-bottom: 0;
+    list-style-type: none;
+}

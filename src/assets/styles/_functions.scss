@@ -1,0 +1,8 @@
+@function gradient-step($primary, $secondary, $weight) {
+    @return mix($primary, $secondary, $weight);
+  }
+  
+$step-1: gradient-step($primary, $secondary, 20%);
+$step-2: gradient-step($primary, $secondary, 40%);
+$step-3: gradient-step($primary, $secondary, 60%);
+$step-4: gradient-step($primary, $secondary, 80%);

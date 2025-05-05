@@ -8,6 +8,7 @@
  */
 
 @import "variables";
+@import "functions";
 
 /**
  * Import npm dependencies
@@ -18,12 +19,32 @@
 // @import "some-node-module";
 // @import "@some-company/some-node-module";
 
+
+@import "npm:@fortawesome/fontawesome-free/css/all.css";
+
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/tables";
+
+
 /**
  * Import layouts
  * It's a best practice to use a different partial for each page
  */
-
+@import "base";
 @import "layouts/home";
+@import "layouts/ponentes";
+@import "layouts/articulo";
+@import "layouts/jornadas";
 
 /**
  * Do NOT include anything else in this file!

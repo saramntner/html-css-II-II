@@ -1,0 +1,57 @@
+// ------------------------------------
+// ESTILOS PARA LA PÁGINA JORNADAS.HTML
+// ------------------------------------
+.table .table__celda-pausa {
+    font-style: italic;
+    color: $step-2;
+  }
+
+.table .table__encabezado{
+    color: $step-4;
+}
+
+.table{
+    margin-bottom:30px;
+    border-color: $step-1;
+}
+
+.table__boton{
+    width:700px;
+    margin: auto;
+}
+
+.btn-custom {
+    @include button-variant(
+      $background: $primary,
+      $border: $primary,
+      $color: white,
+      $hover-background: white,
+      $hover-border: rgb(76, 104, 156),
+      $hover-color: rgb(76, 104, 156),
+      $active-background: white,
+      $active-border: rgb(76, 104, 156),
+      $active-color: rgb(76, 104, 156)
+    );
+
+    width: 100%;
+    padding: 10px;
+  }
+
+.main{
+    container-type: inline-size;
+    container-name: tabla;
+}
+
+@container tabla (max-width: 700px) {
+    .table__boton{
+        width: 300px;
+        margin: auto;
+    }
+
+    .btn{
+        padding:14px;
+    }
+}
+
+
+

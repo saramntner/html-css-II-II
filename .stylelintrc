@@ -1,0 +1,25 @@
+{
+    "extends": [
+        "stylelint-config-recommended-scss",
+        "stylelint-config-recess-order"
+    ],
+    "ignoreFiles": [
+        "**/_functions.scss",
+        "**/_variables.scss"
+    ],
+    "rules": {
+        "selector-class-pattern": "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+        "color-no-invalid-hex": true,
+        "color-hex-length": "short",
+        "length-zero-no-unit": true,
+        "function-name-case": "lower",
+        "selector-type-case": "lower",
+        "selector-attribute-quotes": "always",
+        "value-keyword-case": "lower",
+        "comment-empty-line-before": "always",
+        "font-family-name-quotes": "always-where-recommended",
+        "function-url-quotes": "always",
+        "declaration-block-no-redundant-longhand-properties": true,
+        "shorthand-property-no-redundant-values": true
+    }
+}
