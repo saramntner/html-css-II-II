@@ -7,13 +7,6 @@
 @layer base {
   
 /* Estilos base */
-  :is(.articulo__texto, .articulo__subtitulo, .articulo__lista) {
-    margin: 20px;
-
-    @include media-breakpoint-down(sm) {
-      margin: 20px 0;
-    }
-  }
 
   .articulo__subtitulo {
     font-size: 24px;
@@ -38,6 +31,14 @@
 @layer layout {
 
 /* Estilos para estructura de contenedores y grids */
+  :is(.articulo__texto, .articulo__subtitulo, .articulo__lista) {
+    margin: 20px;
+
+    @include media-breakpoint-down(sm) {
+      margin: 20px 0;
+    }
+  }
+
   .articulo__contenedor {
     position: relative;
     width: 100%;
@@ -52,6 +53,7 @@
 
   .articulo__seccion:has(+ .articulo__seccion),
   .articulo__texto:has(+ .articulo__subtitulo) {
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 
@@ -110,6 +112,7 @@
 
   .articulo__imagen {
     width: 100%;
+    margin: 10px auto 30px;
   }
 }
 
