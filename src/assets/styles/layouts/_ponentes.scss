@@ -1,49 +1,68 @@
 // ------------------------------------
 // ESTILOS PARA LA PÁGINA PONENTES.HTML
 // ------------------------------------
-.ponentes{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    container-type: inline-size;
-}
 
-.ponentes__ponente {
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-    width: calc(100% / 3);
-    padding:10px;
-    margin-bottom: 30px;
-}
+@layer base, layout, components, utilities;
 
-@container (max-width: 800px) {
-    .ponentes__ponente {
-      width: 50%;
-    }
-}
+@layer base {
 
-@container (max-width: 550px) {
-        .ponentes__ponente {
-          width: 100%;
-        }
-  }
-
-.ponentes__img{
-    width:100%;
-    object-fit: cover;
-}
-
-.ponentes__nombre {
+/* Estilos base */
+  .ponentes__nombre {
     margin: 14px 0;
     font-size: 1.4rem;
     font-weight: 600;
     color: $step-3;
-}
+  }
 
-.ponentes__descripcion {
-    padding:0 8px;
+  .ponentes__descripcion {
+    padding: 0 8px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 400;
     line-height: 1.6;
+  }
+}
+
+@layer layout {
+  
+/* Disposición y estructura de los elementos */
+  .ponentes {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    container-type: inline-size;
+  }
+
+  .ponentes__ponente {
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 3);
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+}
+
+@layer components {
+  
+/* Componentes específicos */
+  .ponentes__img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@layer utilities {
+  
+/* Técnicas resposive con container queries */
+  @container (max-width: 800px) {
+    .ponentes__ponente {
+      width: 50%;
+    }
+  }
+
+  @container (max-width: 550px) {
+    .ponentes__ponente {
+      width: 100%;
+    }
+  }
 }

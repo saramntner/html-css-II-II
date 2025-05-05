@@ -1,117 +1,132 @@
 // ------------------------------------
 // ESTILOS PARA LA PÁGINA ARTICULO.HTML
 // ------------------------------------
-.articulo__contenedor{
-    position: relative;
-    width: 100%;
-    height:40vw;
-    overflow: hidden;
-}
 
-.articulo__titulo{
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    z-index: 2;
-    width:100%;
-    transform: translate(-50%, -50%);
-}
+@layer base, layout, components, utilities;
 
-.articulo__imagen-fondo{
-    position: absolute;
-    top: 0;
-    z-index:1;
-    height: 100%;
-    object-fit: cover;
-}
+@layer base {
+  
+/* Estilos base */
+  :is(.articulo__texto, .articulo__subtitulo, .articulo__lista) {
+    margin: 20px;
 
-.articulo__imagen{
-    width:100%;
-}
+    @include media-breakpoint-down(sm) {
+      margin: 20px 0;
+    }
+  }
 
-.articulo__subtitulo{
+  .articulo__subtitulo {
     font-size: 24px;
     color: $step-4;
-}
+  }
 
-:is(.articulo__texto, .articulo__subtitulo, .articulo__lista) {
-        margin: 20px;
-    
-          @include media-breakpoint-down(sm) {
-            margin: 20px 0;
-          }
-}
+  .articulo__subtitulo-2 {
+    font-size: 20px;
+    color: $step-2;
+  }
 
-.articulo__seccion{
-    container-type: inline-size;
-    container-name: seccion;
-}
-
-.articulo__seccion:has(+ .articulo__seccion),
-.articulo__texto:has(+ .articulo__subtitulo) {
-    margin-bottom: 20px;
-}
-
-.articulo__destacado{
+  .articulo__destacado {
     padding-bottom: 15px;
     font-size: 24px;
     font-style: italic;
     line-height: 1.3;
     color: $accent;
     text-align: center;
+  }
 }
 
-@container seccion (min-width: 830px){
+@layer layout {
 
-    :is(.articulo__texto, .articulo__lista) {
-        font-size: 18px;
-    }
+/* Estilos para estructura de contenedores y grids */
+  .articulo__contenedor {
+    position: relative;
+    width: 100%;
+    height: 40vw;
+    overflow: hidden;
+  }
 
-    .articulo__subtitulo {
-        font-size: 30px;
-    }
+  .articulo__seccion {
+    container-type: inline-size;
+    container-name: seccion;
+  }
 
-    .articulo__destacado{
-        font-size: 28px;
-    }
-}
+  .articulo__seccion:has(+ .articulo__seccion),
+  .articulo__texto:has(+ .articulo__subtitulo) {
+    margin-bottom: 20px;
+  }
 
-.articulo__seccion:has(.articulo__destacado){
+  .articulo__seccion:has(.articulo__destacado) {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 0 20px;
 
-    .articulo__subtitulo{
-        grid-row: 1 / 2;
-        grid-column: 1 / 3;
+    .articulo__subtitulo {
+      grid-row: 1 / 2;
+      grid-column: 1 / 3;
     }
-    
-    .articulo__texto{
-        grid-column: 1 / 2;
-        margin-top: 0;
+
+    .articulo__texto {
+      grid-column: 1 / 2;
+      margin-top: 0;
     }
-    
-    .articulo__destacado{
-        grid-row: 2 / 4;
-        grid-column: 2 / 3;
-        align-self: center;
+
+    .articulo__destacado {
+      grid-row: 2 / 4;
+      grid-column: 2 / 3;
+      align-self: center;
     }
 
     @include media-breakpoint-down(sm) {
-        display: block;
+      display: block;
 
-        .articulo__destacado{
-            padding: 0 30px;
-            font-size: 20px;
-            font-style: italic;
-            text-align: left;
-
-        }
-        
+      .articulo__destacado {
+        padding: 0 30px;
+        font-size: 20px;
+        text-align: left;
       }
+    }
+  }
 }
 
-.articulo__subtitulo-2{
-    font-size: 20px;
-    color: $step-2;
+@layer components {
+
+/* Componentes específicos */
+  .articulo__titulo {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 2;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  .articulo__imagen-fondo {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .articulo__imagen {
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  
+/* Estilos condicionales con @container */
+  @container seccion (min-width: 830px) {
+    :is(.articulo__texto, .articulo__lista) {
+      font-size: 18px;
+    }
+
+    .articulo__subtitulo {
+      font-size: 30px;
+    }
+
+    .articulo__destacado {
+      font-size: 28px;
+    }
+  }
 }
