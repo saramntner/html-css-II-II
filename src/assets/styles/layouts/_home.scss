@@ -96,7 +96,12 @@ opacity:0;
 
 .grid__item-8:hover{
 transform: rotate(180deg);
+      @include media-breakpoint-down(sm) {
+      transform: none;
+    }
 }
+
+
 
 .grid__img{
   width:100%;
